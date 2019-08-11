@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-	// ******* NUMBER ARRAYS *******
-	// random computer variable array
+	// target array
 	var target = [];
 	for (var t = 19; t < 121; t++) {
 		target.push(t);
@@ -12,9 +11,7 @@ $(document).ready(function() {
 
 		crystals.push(c);
 	}
-	// console.log(crystals);
-	// ******* GLOBAL VARIABLES *******
-	// random variables selected by computer
+
 	var target; // number to match
 	var cVals = []; // for array of random crystal values
 
@@ -23,13 +20,12 @@ $(document).ready(function() {
 	var c3;
 	var c4;
 
-  var totalPoints = 0; // user's score
+  var totalPoints = 0; //point total
 	var wins = 0;
   var losses = 0;
   
-	// ******* FUNCTIONS *******
 
-	// pick a random number
+	// pick a target number
 	function pickTarget(arr) {
 		var x = arr[Math.floor(Math.random() * arr.length)];
 		target = x;
@@ -38,7 +34,7 @@ $(document).ready(function() {
 
 	} // END of pickTarget function
 
-	// pick random numbers for crystals
+	// pick crystal values
 
 	function pickCrystal(arr) {
 		for (var y = 0; y < 4; y++){
@@ -68,12 +64,14 @@ $(document).ready(function() {
 		pickCrystal(crystals);
 		crystalValues(cVals);
 		totalPoints = 0;
-		$("#points").html(totalPoints);
+    $("#points").html(totalPoints);
+    
 		alert(x);
 	} // END of gameReset function
-	// *** GAME SETTINGS AT START ***
-	pickTarget(target); // random number to match
-	pickCrystal(crystals); // array of random crystal values
+  
+
+	pickTarget(target); // target number to match
+	pickCrystal(crystals); // crystal array
 	crystalValues(cVals);
 
 		// crystal button functions
@@ -94,14 +92,14 @@ $(document).ready(function() {
 			$("#points").html(totalPoints);
 		});
 	$("button").on("click", function() {
-		// this is what happens if the user wins
+		// adds to win total
 		if (totalPoints == target) {
 			wins++;
 			console.log(totalPoints);
 			$("#points").html(totalPoints);
 			$("#wins").html("Wins: " + wins);
 
-			setTimeout(function() {gameReset("YOU WIN!!")},0);
+			setTimeout(function() {gameReset("What magic do you possess???")},0);
 		}
 		else if (totalPoints > target){
 
@@ -109,7 +107,7 @@ $(document).ready(function() {
 			$("#points").html(totalPoints);
 			$("#losses").html("Losses: " + losses);
 
-			setTimeout(function() {gameReset("WOMP-WOMP...YOU LOSE!")},0);
+			setTimeout(function() {gameReset("You do not have the strength...")},0);
 		}
 	});
 
