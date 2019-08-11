@@ -101,7 +101,7 @@ $(document).ready(function() {
 			$("#points").html(totalPoints);
 			$("#wins").html("Wins: " + wins);
 
-			setTimeout(function() {gameReset("YOU WIN!!")}, 200);
+			setTimeout(function() {gameReset("YOU WIN!!")},0);
 		}
 		else if (totalPoints > target){
 
@@ -109,7 +109,7 @@ $(document).ready(function() {
 			$("#points").html(totalPoints);
 			$("#losses").html("Losses: " + losses);
 
-			setTimeout(function() {gameReset("WOMP-WOMP...YOU LOSE!")}, 200);
+			setTimeout(function() {gameReset("WOMP-WOMP...YOU LOSE!")},0);
 		}
 	});
 
