@@ -5,14 +5,15 @@
   <title>Crystal Collector</title>
 
   <!-- Added a link to our external stylesheet-->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
   <h1>CRYSTAL COLLECTOR</h1>
-    <div>
+    <div id=instructions>
       <p>You will be given a random number at the start of the game.</p>
       <p>There are four cyrstals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
       <p>You win the game by matching your total score to a random number.</p>
@@ -20,5 +21,25 @@
       <p>The value of each crystal is hidden from you until you click on it.</p>
       <p>Each time when the game starts, the game will change the values of each crystal.</p>
     </div>
+    
+    <h3 id="target">Target Number: </h3>
+
+    <div id="score">
+      <h3>Wins: </h3>
+      <h3>Losses: </h3>
+    </div>
+
+    <div id="crystals">
+      <button id="c1" value = 0><img src="./assets/images/c1.png"></button>
+      <button id="c2" value = 0><img src="./assets/images/c2.png"></button>
+      <button id="c3" value = 0><img src="./assets/images/c3.png"></button>
+      <button id="c4" value = 0><img src="./assets/images/c4.png"></button>
+    </div>
+
+    <h3 id="points">Point Total: </h3>
 
 </body>
+
+<script src="assets/javascript/game.js"></script>
+
+</html> 
