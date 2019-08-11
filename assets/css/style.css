@@ -24,3 +24,6 @@ p {
 #crystals{
   position: relative;
 }
+#target{
+  font-size: 2.5rem;
+}
